@@ -63,7 +63,7 @@ class TrabajadorForm(ModelForm):
 
     class Meta:
         model = Trabajador
-        fields = ['nombre', 'apellidos', 'aniosExperiencia', 'tiposDeServicio', 'telefono', 'correo', 'imagen']
+        fields = ['id', 'nombre', 'apellidos', 'aniosExperiencia', 'tiposDeServicio', 'telefono', 'correo', 'imagen']
 
 
 class UserForm(ModelForm):

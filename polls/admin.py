@@ -12,7 +12,7 @@ class ComentarioAdmin(admin.ModelAdmin):
 
 
 class TrabajadorAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'apellidos')
+    list_display = ('id', 'nombre', 'apellidos')
 
 
 admin.site.register(TiposDeServicio, TiposDeServicioAdmin)

@@ -70,8 +70,9 @@ def register(request):
 
     return HttpResponseRedirect('/')
 
-def editar_perfil(request,idTrabajador):
-    trabajador=Trabajador.objects.get(usuarioId=idTrabajador)
+def editar_perfil(request, idTrabajador):
+    trabajador = Trabajador.objects.get(id=idTrabajador)
+
     if request.method == 'POST':
         # formulario enviado
         form_trabajador = TrabajadorForm(request.POST, request.FILES, instance=trabajador)
@@ -85,7 +86,12 @@ def editar_perfil(request,idTrabajador):
         # formulario inicial
         form_trabajador = TrabajadorForm(instance=trabajador)
 
-    context = {'form_trabajador': form_trabajador}
+    context = {
+        'form_trabajador': form_trabajador,
+        'trabajadorid': trabajador.id
+
+    }
+
     return render(request, 'polls/editar.html', context)
 
 @csrf_exempt

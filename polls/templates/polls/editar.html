@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Busco Ayuda</title>
+
+</head>
+
+<body class="gray-bg">
+
+        <div>
+            <form class="m-t" role="form" action="/editar/{{trabajadorid}}" method="post">
+                {% csrf_token %}
+                {{ form_trabajador.as_p }}
+                <button type="submit" class="btn btn-primary block full-width m-b" id="id_botonEditar">Editar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
