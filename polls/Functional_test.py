@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 __autor__ = 'Jose Alvarez - Fernando Arruza'
 
 from unittest import TestCase
@@ -31,7 +33,7 @@ class FuncionalTest(TestCase):
         experiencia = self.browser.find_element_by_id('id_aniosExperiencia')
         experiencia.send_keys('5')
 
-        self.find_element_by_xpath("//select[@id'id_tiposDeServicio']/option[text()='Desarrollador Web']").click()
+        self.browser.find_element_by_xpath("//select[@id='id_tiposDeServicio']/option[text()='Desarrollador Web']").click()
 
         telefono = self.browser.find_element_by_id('id_telefono')
         telefono.send_keys('3113344555')
