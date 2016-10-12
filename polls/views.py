@@ -76,7 +76,7 @@ def register(request):
     return HttpResponseRedirect('/')
 
 def editar_perfil(request, idTrabajador):
-    trabajador = Trabajador.objects.get(id=idTrabajador)
+    trabajador = Trabajador.objects.get(usuarioId__id=idTrabajador)
 
     if request.method == 'POST':
         # formulario enviado
@@ -93,7 +93,7 @@ def editar_perfil(request, idTrabajador):
 
     context = {
         'form_trabajador': form_trabajador,
-        'trabajadorid': trabajador.id
+        'trabajadorid': trabajador.usuarioId.id
 
     }
 
