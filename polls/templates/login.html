@@ -24,12 +24,12 @@
             <form class="m-t" role="form" action="{% url 'login' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Usuario" required="true" name="username">
+                    <input type="text" class="form-control" placeholder="Usuario" required="true" name="username" id="id_username">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="true" name="password">
+                    <input type="password" class="form-control" placeholder="Password" required="true" name="password" id="id_password">
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                <button type="submit" class="btn btn-primary block full-width m-b" id="id_botonLogin">Login</button>
             </form>
         </div>
     </div>
