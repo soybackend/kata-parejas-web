@@ -25,7 +25,7 @@ class Trabajador(models.Model):
     tiposDeServicio = models.ForeignKey(TiposDeServicio, null=True)
     telefono = models.CharField(max_length=1000)
     correo = models.CharField(max_length=1000)
-    imagen = models.ImageField(upload_to='photos')
+    imagen = models.ImageField(upload_to='photos', blank=True, null=True)
     usuarioId = models.OneToOneField(User, null=True)
 
 
@@ -60,6 +60,8 @@ class TrabajadorForm(ModelForm):
         widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Correo electrónico'}),
         label='Correo'
     )
+
+
 
     class Meta:
         model = Trabajador

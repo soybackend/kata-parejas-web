@@ -87,38 +87,39 @@ class FuncionalTest(TestCase):
         botonLogout.click()
 
 
-    # def test_editar(self):
-    #
-    #     self.browser.get('http://localhost:8000/login/')
-    #
-    #     nombre_usuario = self.browser.find_element_by_id('id_username')
-    #     nombre_usuario.send_keys('juan645')
-    #
-    #     clave = self.browser.find_element_by_id('id_password')
-    #     clave.send_keys('clave123')
-    #
-    #     botonLogin = self.browser.find_element_by_id('id_botonLogin')
-    #     botonLogin.click()
-    #
-    #     botonEditar = self.browser.find_element_by_id('id_editar')
-    #     botonEditar.click()
-    #
-    #     nombre = self.browser.find_element_by_id('id_nombre')
-    #     nombre.send_keys('Juan Carlos')
-    #
-    #     botonEditarGuardar = self.browser.find_element_by_id('id_botonEditar')
-    #     botonEditarGuardar.click()
-    #
-    #     self.browser.implicitly_wait(3)
-    #
-    #     botonLogout = self.browser.find_element_by_id('id_botonLogout')
-    #     botonLogout.click()
-    #
-    #     self.browser.implicitly_wait(3)
-    #
-    #     span = self.browser.find_element(By.XPATH, '//span[text()="Juan Carlos"]')
-    #     self.assertIn('Juan Carlos', span.text)
+    def test_5editar(self):
 
+        self.browser.get('http://localhost:8000/login/')
 
+        nombre_usuario = self.browser.find_element_by_id('id_username')
+        nombre_usuario.send_keys('juan645')
 
+        clave = self.browser.find_element_by_id('id_password')
+        clave.send_keys('clave123')
 
+        botonLogin = self.browser.find_element_by_id('id_botonLogin')
+        botonLogin.click()
+
+        self.browser.implicitly_wait(3)
+
+        botonEditar = self.browser.find_element_by_id('id_editar')
+        botonEditar.click()
+
+        self.browser.implicitly_wait(3)
+
+        nombre = self.browser.find_element_by_id('id_nombre')
+        nombre.clear()
+        nombre.send_keys('Juan Carlos')
+
+        botonEditarGuardar = self.browser.find_element_by_id('id_botonEditar')
+        botonEditarGuardar.click()
+
+        self.browser.implicitly_wait(3)
+
+        botonLogout = self.browser.find_element_by_id('id_botonLogout')
+        botonLogout.click()
+
+        self.browser.implicitly_wait(3)
+
+        span = self.browser.find_element(By.XPATH, '//span[text()="Juan Carlos Arevalo"]')
+        self.assertIn('Juan Carlos Arevalo', span.text)
